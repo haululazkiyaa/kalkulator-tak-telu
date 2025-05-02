@@ -207,7 +207,7 @@ export default function Home() {
             </a>
           </div>
           <CardTitle className="text-2xl">
-            Kalkulator TAK (Transkrip Aktivitas Kemahasiswaan)
+            KATAK - Kalkulator TAK Tel-U (Transkrip Aktivitas Kemahasiswaan)
           </CardTitle>
           <CardDescription>
             Unggah file JSON data TAK untuk melihat perhitungan dan kategorisasi
@@ -254,7 +254,11 @@ export default function Home() {
                   dari {requiredPoints} poin minimum
                 </p>
                 <Progress
-                  value={(totalPoints / requiredPoints) * 100}
+                  value={
+                    totalPoints > requiredPoints
+                      ? 100
+                      : (totalPoints / requiredPoints) * 100
+                  }
                   className="h-2 mt-2"
                 />
               </CardContent>
