@@ -134,7 +134,7 @@ export default function Home() {
 
       if (req.name === "Orientasi Mahasiswa Baru") {
         categoryActivities = approvedActivities.filter(
-          (activity) => activity.partisipasi === req.key
+          (activity) => activity.partisipasi.toLowerCase(); === req.key.toLowerCase();
         );
       } else if (req.name === "Belmawa/Mandiri") {
         categoryActivities = approvedActivities.filter((activity) =>
@@ -142,11 +142,11 @@ export default function Home() {
         );
       } else if (req.name === "Organisasi Kemahasiswaan") {
         categoryActivities = approvedActivities.filter(
-          (activity) => activity.tingkat === req.key
+          (activity) => activity.tingkat.toLowerCase(); === req.key.toLowerCase();
         );
       } else {
         categoryActivities = approvedActivities.filter(
-          (activity) => activity.partisipasi === req.key
+          (activity) => activity.partisipasi.toLowerCase(); === req.key.toLowerCase();
         );
       }
 
